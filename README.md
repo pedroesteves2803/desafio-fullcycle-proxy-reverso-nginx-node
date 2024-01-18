@@ -1,4 +1,4 @@
-# Desafio Full Cycle - Proxy Reverso
+# 🐳 Desafio Full Cycle - Proxy Reverso
 
 Este desafio, parte do Curso Full Cycle, tem como objetivo configurar um Proxy Reverso utilizando Nginx e Node.js, tudo dentro de containers Docker.
 
@@ -27,13 +27,13 @@ Suba tudo em um repositório e faça a entrega.
 
 ## 💻 Como executar o projeto
 
-1. Primeiramente, crie uma network para que os containers possam se comunicar entre si:
+1. Primeiramente, crie uma network para permitir a comunicação entre os containers:
 
 ```bash
 docker network create node-network
 ```
 
-1. Agora, execute o comando docker-compose para iniciar os containers:
+2. Em seguida, execute o comando docker-compose para iniciar os containers:
 
 ```bash
 docker-compose up -d
@@ -41,10 +41,8 @@ docker-compose up -d
 
 3. Acesse a aplicação em seu navegador:
 
-
 ```bash
 http://localhost:8080
 ```
 
-Cada vez que você atualizar a página, serão adicionados cinco novos nomes ao banco de dados.
-
+A cada vez que a página for atualizada, cinco novos nomes serão adicionados ao banco de dados.
