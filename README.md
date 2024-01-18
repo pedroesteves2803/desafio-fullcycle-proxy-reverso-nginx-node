@@ -27,22 +27,16 @@ Suba tudo em um repositório e faça a entrega.
 
 ## 💻 Como executar o projeto
 
-1. Primeiramente, crie uma network para permitir a comunicação entre os containers:
-
-```bash
-docker network create node-network
-```
-
-2. Em seguida, execute o comando docker-compose para iniciar os containers:
+1. execute o comando docker-compose para iniciar os containers:
 
 ```bash
 docker-compose up -d
 ```
 
-3. Acesse a aplicação em seu navegador:
+2. Acesse a aplicação em seu navegador:
 
 ```bash
 http://localhost:8080
 ```
 
-A cada vez que a página for atualizada, cinco novos nomes serão adicionados ao banco de dados.
+> Observação: A cada vez que a página for atualizada, cinco novos nomes serão adicionados ao banco de dados.

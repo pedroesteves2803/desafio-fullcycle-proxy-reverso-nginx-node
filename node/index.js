@@ -29,6 +29,8 @@ app.get('/', async (req, res) => {
     try {
         createConnection(); // Criar conexão se não existir
 
+        await createPeopleTable(); // Verifica se a tabela existe, e a cria se não existir
+
         const newNames = generateRandomNames(); // Gera um novo array de nomes aleatórios
         await insertPeople(newNames);
         
@@ -64,6 +66,20 @@ app.get('/', async (req, res) => {
 app.listen(port, () => {
     console.log('Rodando na porta ' + port);
 });
+
+async function createPeopleTable() {
+    const tableExistsSql = "SHOW TABLES LIKE 'people'";
+    const tableExists = await connection.query(tableExistsSql);
+
+    if (tableExists.length === 0) {
+        const createTableSql = `
+            CREATE TABLE people (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                name VARCHAR(255) NOT NULL
+            )`;
+        await connection.query(createTableSql);
+    }
+}
 
 function generateRandomNames() {
     const newNames = [];
